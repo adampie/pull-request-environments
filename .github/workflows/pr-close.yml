@@ -3,14 +3,14 @@ on:
   pull_request:
     branches:
       - 'master'
-    types: [synchronize]
+    types: [closed]
 
 jobs:
-  push:
-    name: Push
+  close:
+    name: Close
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Print
-        run: echo "Pushing latest code to pull request environment"
+        run: echo "Removing pull request environment"
