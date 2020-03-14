@@ -1,0 +1,16 @@
+name: PR Environment
+on:
+  pull_request:
+    branches:
+      - 'master'
+    types: [synchronize]
+
+jobs:
+  push:
+    name: Push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Print
+        run: echo "Pushing latest code to pull request environment"
