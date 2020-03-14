@@ -1,0 +1,16 @@
+name: PR Environment
+on:
+  pull_request:
+    branches:
+      - 'master'
+    types: [opened, reopened]
+
+jobs:
+  open:
+    name: Open
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Print
+        run: echo "Opened new pull request"
